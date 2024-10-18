@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @Entity
@@ -22,7 +19,4 @@ public class Category {
 
     @Column(name = "target_hours", nullable = false)
     private Short targetHours;
-
-    @OneToMany(mappedBy = "category", orphanRemoval = true)
-    private Set<Question> questions = new LinkedHashSet<>();
 }
